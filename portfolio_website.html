@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhinav Singh Kushwah | Developer Portfolio & Learning Journey</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brandEmerald: '#10b981',
+            brandCyan: '#06b6d4',
+            bgCanvas: '#080c14',
+            cardBg: '#0e1524',
+            borderSubtle: '#1f293d',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Background subtle grid pattern */
+    .bg-grid-mesh {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080c14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1f293d;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #10b981;
+    }
+    .badge-glow {
+      box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[#080c14] text-zinc-300 font-sans antialiased min-h-screen selection:bg-emerald-500 selection:text-black bg-grid-mesh flex flex-col justify-between">
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-40 bg-[#080c14]/85 backdrop-blur-md border-b border-[#1a2333]">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2.5 font-mono text-sm font-semibold text-zinc-100 hover:text-emerald-400 transition group">
+        <span class="text-emerald-400 group-hover:rotate-12 transition-transform inline-block">❯</span>
+        <span>abhinav.dev</span>
+        <span class="text-zinc-600 hidden sm:inline">~/cse-bennett</span>
+      </a>
+
+      <nav class="flex items-center gap-4 sm:gap-6 text-xs font-mono text-zinc-400">
+        <a href="#about" class="hover:text-emerald-400 transition hidden sm:inline">about</a>
+        <a href="#projects" class="hover:text-emerald-400 transition">projects</a>
+        <a href="#skills" class="hover:text-emerald-400 transition">skills</a>
+        <button onclick="toggleContactModal(true)" class="px-3.5 py-1.5 rounded-md border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-400 transition font-mono flex items-center gap-1.5">
+          <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+          <span>contact</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-12 sm:py-16 space-y-24 flex-1">
+
+    <!-- Hero Section -->
+    <section id="hero" class="space-y-6 pt-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-mono text-xs badge-glow">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span>1st Year B.Tech CSE (Data Science) • Bennett University</span>
+      </div>
+
+      <div class="space-y-3">
+        <h1 class="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Abhinav Singh Kushwah</span>.
+        </h1>
+        <p class="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-3xl">
+          Computer Science undergraduate passionate about building pragmatic <span class="text-emerald-400 font-mono">Python automation tools</span>, mastering foundational programming, and leveraging modern agentic environments like <span class="text-cyan-400 font-mono">Google Antigravity</span> for high-velocity software prototyping and vibe coding.
+        </p>
+      </div>
+
+      <!-- Bash Terminal Snippet -->
+      <div class="p-4 rounded-xl bg-[#0e1524] border border-[#1f293d] font-mono text-xs text-zinc-300 shadow-xl space-y-2">
+        <div class="flex items-center gap-2 pb-2 border-b border-zinc-800 text-zinc-500 text-[11px]">
+          <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+          <span class="ml-2">bash - system profile snapshot</span>
+        </div>
+        <div class="space-y-1">
+          <p><span class="text-emerald-400">abhinav@bennett-cse</span>:<span class="text-cyan-400">~</span>$ whoami</p>
+          <p class="text-zinc-400">&gt; Abhinav Singh Kushwah | B.Tech CSE (Data Science) | GFG Chapter Applicant</p>
+          <p><span class="text-emerald-400">abhinav@bennett-cse</span>:<span class="text-cyan-400">~</span>$ gh repo list AbhinavSinghKushwah-1708</p>
+          <p class="text-zinc-400">&gt; Authenticated GitHub: <a href="https://github.com/AbhinavSinghKushwah-1708" target="_blank" class="text-emerald-400 hover:underline">github.com/AbhinavSinghKushwah-1708</a></p>
+          <p><span class="text-emerald-400">abhinav@bennett-cse</span>:<span class="text-cyan-400">~</span>$ current-stack --verbose</p>
+          <p class="text-zinc-400">&gt; Core: Python 3.x, Linux CLI, Git | Agentic AI: Google Antigravity, Copilot, Gemini</p>
+        </div>
+      </div>
+
+      <!-- CTA Links -->
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <a href="#projects" class="px-4 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-xs font-mono transition flex items-center gap-2 shadow-lg shadow-emerald-500/20">
+          <i data-lucide="layers" class="w-4 h-4"></i>
+          <span>Explore Projects</span>
+        </a>
+        <a href="https://github.com/AbhinavSinghKushwah-1708" target="_blank" rel="noreferrer" class="px-4 py-2.5 rounded-lg border border-[#1f293d] bg-[#0e1524] hover:bg-[#151f33] text-zinc-200 text-xs font-mono transition flex items-center gap-2">
+          <i data-lucide="github" class="w-4 h-4 text-emerald-400"></i>
+          <span>GitHub: @AbhinavSinghKushwah-1708</span>
+        </a>
+        <button onclick="copyEmailToClipboard()" id="copy-btn" class="px-4 py-2.5 rounded-lg border border-zinc-800 bg-[#0e1524]/60 hover:bg-[#151f33] text-zinc-400 hover:text-zinc-200 text-xs font-mono transition flex items-center gap-2">
+          <i data-lucide="copy" class="w-4 h-4"></i>
+          <span id="copy-text">Copy Email</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- About Section with Detailed Descriptive Narrative -->
+    <section id="about" class="space-y-4 scroll-mt-20">
+      <div class="flex items-center gap-3">
+        <span class="text-emerald-400 font-mono text-xs">01.</span>
+        <h2 class="text-lg font-bold text-white tracking-wide uppercase font-mono">About Me & Philosophy</h2>
+        <div class="flex-1 h-[1px] bg-[#1f293d]"></div>
+      </div>
+
+      <div class="p-6 rounded-xl bg-[#0e1524]/70 border border-[#1f293d] space-y-4 text-sm text-zinc-300 leading-relaxed">
+        <p>
+          I am a 1st-year student at <strong>Bennett University</strong> , pursuing a <strong>B.Tech in Computer Science & Engineering </strong>. I believe in honest, practical engineering: writing clean code by hand where fundamentals matter, while enthusiastically adopting cutting-edge tools to accelerate product delivery.
+        </p>
+        <p>
+          My day-to-day coding focuses on building reliable <strong>Python terminal utilities</strong>, file system automation scripts, and exploring foundational object-oriented design. At the same time, I actively explore the emerging frontier of <strong>agentic vibe coding</strong>. Utilizing tools like <strong>Google Antigravity</strong>, <strong>GitHub Copilot</strong>, and <strong>Gemini</strong>, I direct autonomous AI coding agents to translate design mockups, cinematic concepts, and complex requirements into interactive web applications without claiming syntax I haven't manually written.
+        </p>
+        <div class="grid sm:grid-cols-3 gap-3 pt-2 text-xs font-mono text-zinc-400">
+          <div class="p-3 rounded-lg bg-black/40 border border-zinc-800/80">
+            <span class="text-emerald-400 font-semibold block mb-1">📍 Campus</span>
+            <span>Bennett University, Greater Noida</span>
+          </div>
+          <div class="p-3 rounded-lg bg-black/40 border border-zinc-800/80">
+            <span class="text-cyan-400 font-semibold block mb-1">🎓 Academic Track</span>
+            <span>B.Tech CSE (Data Science)</span>
+          </div>
+          <div class="p-3 rounded-lg bg-black/40 border border-zinc-800/80">
+            <span class="text-emerald-400 font-semibold block mb-1">🤖 Agentic IDE</span>
+            <span>Google Antigravity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="space-y-6 scroll-mt-20">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3 flex-1">
+          <span class="text-emerald-400 font-mono text-xs">02.</span>
+          <h2 class="text-lg font-bold text-white tracking-wide uppercase font-mono">Featured Projects</h2>
+          <div class="flex-1 h-[1px] bg-[#1f293d]"></div>
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap gap-2 text-xs font-mono">
+        <button onclick="filterProjects('all')" class="filter-btn px-3 py-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/20 text-emerald-300" data-category="all">
+          All Projects (4)
+        </button>
+        <button onclick="filterProjects('python')" class="filter-btn px-3 py-1.5 rounded-lg border border-[#1f293d] bg-[#0e1524] text-zinc-400 hover:text-zinc-200" data-category="python">
+          Python & Automation (3)
+        </button>
+        <button onclick="filterProjects('web')" class="filter-btn px-3 py-1.5 rounded-lg border border-[#1f293d] bg-[#0e1524] text-zinc-400 hover:text-zinc-200" data-category="web">
+          Vibe Coded Web (1)
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 gap-5" id="projects-grid">
+
+        <!-- Project 1: Marvel GFG Event Landing Page -->
+        <div class="project-card p-5 rounded-xl bg-[#0e1524] border border-[#1f293d] hover:border-cyan-500/50 transition flex flex-col justify-between gap-4" data-cat="web">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono font-medium flex items-center gap-1.5">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>GFG Chapter Selection Task</span>
+              </span>
+              <a href="https://github.com/AbhinavSinghKushwah-1708" target="_blank" class="text-zinc-400 hover:text-white transition" title="View on GitHub">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <div>
+              <h3 class="text-base font-bold text-white font-mono">GFG: Code of Stark (Marvel Hackathon Web App)</h3>
+              <p class="text-xs text-zinc-300 pt-2 leading-relaxed">
+                An immersive, cinematic event landing page created for the GeeksforGeeks Student Chapter selection at Bennett University. Incorporates an Iron Man and Infinity Stones visual identity, complete with a live event countdown clock, interactive schedule tracks, mentor dossiers, and dynamic registration popup modals.
+              </p>
+              
+              <!-- Honest Description: Vibe Coded with Clear Boundaries -->
+              <p class="text-[11px] text-zinc-400 pt-2 leading-relaxed border-t border-zinc-800/80 mt-2">
+                This project was developed through an agentic vibe coding workflow utilizing <strong>Google Antigravity</strong>, <strong>GitHub Copilot</strong>, and <strong>Gemini</strong>. The underlying generated frontend framework and advanced CSS animations are not part of my manual coding skillset; this showcase reflects my product direction, prompt structuring, UI aesthetic oversight, and end-to-end deployment execution.
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-[#1a2333]">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-cyan-300">Google Antigravity</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-cyan-300">Copilot & Gemini</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-400">Prompt Orchestration</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-400">Vercel Deployment</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Terminal News Aggregator -->
+        <div class="project-card p-5 rounded-xl bg-[#0e1524] border border-[#1f293d] hover:border-emerald-500/50 transition flex flex-col justify-between gap-4" data-cat="python">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono font-medium flex items-center gap-1.5">
+                <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                <span>Python CLI Utility</span>
+              </span>
+              <a href="https://github.com/AbhinavSinghKushwah-1708" target="_blank" class="text-zinc-400 hover:text-white transition" title="View on GitHub">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white font-mono">Terminal Tech News Reader</h3>
+              <p class="text-xs text-zinc-300 pt-2 leading-relaxed">
+                A command-line news reader developed in Python that fetches and displays real-time developer, open-source, and tech industry headlines. Features robust HTTP request handling, response error checking, structured JSON parsing, and neatly formatted terminal table output with custom category filters.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-2 pt-2 border-t border-[#1a2333]">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-emerald-300">Python 3</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-emerald-300">Requests API</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">JSON Parsing</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Terminal UI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Automated Workspace File Organizer -->
+        <div class="project-card p-5 rounded-xl bg-[#0e1524] border border-[#1f293d] hover:border-emerald-500/50 transition flex flex-col justify-between gap-4" data-cat="python">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono font-medium flex items-center gap-1.5">
+                <i data-lucide="folder-cog" class="w-3.5 h-3.5"></i>
+                <span>Automation Script</span>
+              </span>
+              <a href="https://github.com/AbhinavSinghKushwah-1708" target="_blank" class="text-zinc-400 hover:text-white transition" title="View on GitHub">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white font-mono">Workspace Directory & File Organizer</h3>
+              <p class="text-xs text-zinc-300 pt-2 leading-relaxed">
+                A system automation utility designed to resolve cluttered download folders and messy dev environments. Traverses target directories, inspects MIME extensions, generates categorized destination folders, and safely moves archives, documents, images, and source files using Python's native <code class="text-emerald-400">os</code> and <code class="text-emerald-400">shutil</code> libraries.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-2 pt-2 border-t border-[#1a2333]">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-emerald-300">Python 3</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-emerald-300">os & shutil</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">File System I/O</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Python OOP Lab & Problem Solving -->
+        <div class="project-card p-5 rounded-xl bg-[#0e1524] border border-[#1f293d] hover:border-emerald-500/50 transition flex flex-col justify-between gap-4" data-cat="python">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono font-medium flex items-center gap-1.5">
+                <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+                <span>OOP Practice</span>
+              </span>
+              <a href="https://github.com/AbhinavSinghKushwah-1708" target="_blank" class="text-zinc-400 hover:text-white transition" title="View on GitHub">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white font-mono">Python OOP & Scripting Lab</h3>
+              <p class="text-xs text-zinc-300 pt-2 leading-relaxed">
+                A personal repository documenting solutions and class designs created during coursework and self-study. Implements class inheritance, encapsulation patterns, custom data model structures, file persistence, and modular function design to build a solid base in clean software architecture.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-2 pt-2 border-t border-[#1a2333]">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-zinc-400">
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-emerald-300">Python 3</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-emerald-300">Class Architecture</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">OOP Concepts</span>
+              <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Modular Coding</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills Section with Google Antigravity & Agentic Workflows -->
+    <section id="skills" class="space-y-6 scroll-mt-20">
+      <div class="flex items-center gap-3">
+        <span class="text-emerald-400 font-mono text-xs">03.</span>
+        <h2 class="text-lg font-bold text-white tracking-wide uppercase font-mono">Current Skills & Tooling</h2>
+        <div class="flex-1 h-[1px] bg-[#1f293d]"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <!-- 1. Practical Core Languages -->
+        <div class="p-5 rounded-xl bg-[#0e1524] border border-[#1f293d] space-y-3">
+          <div class="flex items-center gap-2 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Languages & Scripting</span>
+          </div>
+          <p class="text-[11px] text-zinc-400">Core technologies I write, test, and debug manually:</p>
+          
+          <ul class="space-y-2 text-xs font-mono text-zinc-300 pt-1">
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>Python 3.x Fundamentals</span>
+              <span class="text-emerald-400 text-[10px]">Proficient</span>
+            </li>
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>Git & GitHub CLI</span>
+              <span class="text-emerald-400 text-[10px]">Version Control</span>
+            </li>
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>Basic HTML Structure</span>
+              <span class="text-emerald-400 text-[10px]">Foundational</span>
+            </li>
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>Linux & Bash Shell</span>
+              <span class="text-emerald-400 text-[10px]">CLI Navigation</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2. AI Workspaces & Agentic Coding -->
+        <div class="p-5 rounded-xl bg-[#0e1524] border border-[#1f293d] space-y-3">
+          <div class="flex items-center gap-2 text-cyan-400 text-xs font-mono font-semibold uppercase tracking-wider">
+            <i data-lucide="cpu" class="w-4 h-4"></i>
+            <span>Agentic & Vibe Coding</span>
+          </div>
+          <p class="text-[11px] text-zinc-400">Agentic IDEs and rapid development platforms I leverage:</p>
+          
+          <ul class="space-y-2 text-xs font-mono text-zinc-300 pt-1">
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>Google Antigravity</span>
+              <span class="text-cyan-400 text-[10px]">Agentic IDE</span>
+            </li>
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>GitHub Copilot</span>
+              <span class="text-cyan-400 text-[10px]">Inline Assist</span>
+            </li>
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>Google Gemini</span>
+              <span class="text-cyan-400 text-[10px]">Logic & Context</span>
+            </li>
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>v0.dev & Bolt.new</span>
+              <span class="text-cyan-400 text-[10px]">UI Generation</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 3. Actively Learning -->
+        <div class="p-5 rounded-xl bg-[#0e1524] border border-[#1f293d] space-y-3">
+          <div class="flex items-center gap-2 text-teal-400 text-xs font-mono font-semibold uppercase tracking-wider">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span>Currently Learning</span>
+          </div>
+          <p class="text-[11px] text-zinc-400">Concepts and libraries actively being learned through coursework:</p>
+          
+          <ul class="space-y-2 text-xs font-mono text-zinc-300 pt-1">
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>C++ Programming</span>
+              <span class="text-teal-400 text-[10px]">Syntax & Logic</span>
+            </li>
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>Object-Oriented Design</span>
+              <span class="text-teal-400 text-[10px]">Classes & Encapsulation</span>
+            </li>
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>NumPy & Pandas</span>
+              <span class="text-teal-400 text-[10px]">Data Science</span>
+            </li>
+            <li class="p-2 rounded bg-black/40 border border-zinc-800 flex items-center justify-between">
+              <span>REST APIs & JSON</span>
+              <span class="text-teal-400 text-[10px]">HTTP Networking</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-[#1a2333] py-8 text-center text-xs font-mono text-zinc-500 bg-[#06090f]">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>Abhinav Singh Kushwah • Bennett University B.Tech CSE (Data Science)</p>
+      <div class="flex items-center gap-4 text-zinc-400">
+        <a href="https://github.com/AbhinavSinghKushwah-1708" target="_blank" rel="noreferrer" class="hover:text-emerald-400 transition">
+          github/AbhinavSinghKushwah-1708
+        </a>
+        <span>•</span>
+        <button onclick="toggleContactModal(true)" class="hover:text-emerald-400 transition">
+          contact
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200">
+    <div class="relative w-full max-w-sm bg-[#0e1524] border border-[#1f293d] rounded-xl p-6 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+          <i data-lucide="send" class="w-4 h-4 text-emerald-400"></i> Get In Touch
+        </h3>
+        <button onclick="toggleContactModal(false)" class="text-zinc-500 hover:text-white p-1">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-zinc-400">
+        Feel free to reach out for conversations regarding Python projects, GFG chapter activities, or collaborations.
+      </p>
+
+      <div class="space-y-2.5 text-xs text-zinc-300 font-mono">
+        <div class="p-3 rounded bg-black/40 border border-zinc-800/80">
+          <span class="text-zinc-500 block text-[11px]">GitHub Profile:</span>
+          <a href="https://github.com/AbhinavSinghKushwah-1708" target="_blank" class="text-emerald-400 hover:underline">
+            github.com/AbhinavSinghKushwah-1708
+          </a>
+        </div>
+        <div class="p-3 rounded bg-black/40 border border-zinc-800/80">
+          <span class="text-zinc-500 block text-[11px]">College:</span>
+          <span class="text-zinc-200">Bennett University, Greater Noida</span>
+        </div>
+        <div class="p-3 rounded bg-black/40 border border-zinc-800/80">
+          <span class="text-zinc-500 block text-[11px]">Direct Contact:</span>
+          <span class="text-zinc-200 select-all">abhinavsk178@gmail.com</span>
+        </div>
+      </div>
+
+      <div class="pt-1 flex gap-2">
+        <button onclick="copyEmailToClipboard()" class="flex-1 py-2 rounded bg-emerald-500 hover:bg-emerald-400 text-black font-semibold font-mono text-xs transition">
+          Copy Email
+        </button>
+        <button onclick="toggleContactModal(false)" class="px-4 py-2 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-mono text-xs transition">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Project filtering logic
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      // Update button styling
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.className = "filter-btn px-3 py-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/20 text-emerald-300";
+        } else {
+          btn.className = "filter-btn px-3 py-1.5 rounded-lg border border-[#1f293d] bg-[#0e1524] text-zinc-400 hover:text-zinc-200";
+        }
+      });
+
+      // Filter cards
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-cat');
+        if (category === 'all' || cardCat === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Modal show/hide handler
+    const contactModal = document.getElementById('contact-modal');
+    function toggleContactModal(open) {
+      if (open) {
+        contactModal.classList.remove('hidden');
+        setTimeout(() => contactModal.classList.remove('opacity-0'), 10);
+      } else {
+        contactModal.classList.add('opacity-0');
+        setTimeout(() => contactModal.classList.add('hidden'), 200);
+      }
+    }
+
+    // Copy Email to clipboard with fallback
+    function copyEmailToClipboard() {
+      const email = "abhinavsk178@gmail.com";
+      const copyBtnText = document.getElementById('copy-text');
+      
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        if (copyBtnText) copyBtnText.innerText = "Copied!";
+        setTimeout(() => {
+          if (copyBtnText) copyBtnText.innerText = "Copy Email";
+        }, 2000);
+      } catch (err) {
+        console.error('Could not copy', err);
+      }
+      document.body.removeChild(textArea);
+    }
+  </script>
+</body>
+</html>
